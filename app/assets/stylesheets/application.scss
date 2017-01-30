@@ -15,7 +15,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-@import 'fonts', 'font-sizes';
+// Overall
+@import 'fonts', 'backgrounds';
 
 // SCSS Specific
 @import 'font-awesome';
@@ -23,7 +24,8 @@
 // Paper Theme
 @import 'paper-dashboard', 'themify-icons';
 
-@import 'backgrounds', 'hero';
+// Desktop
+@import 'desktop/font-sizes', 'desktop/hero';
 
 html {
   @include muli;

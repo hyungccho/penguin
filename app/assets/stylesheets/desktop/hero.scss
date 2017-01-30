@@ -65,13 +65,23 @@
     }
     
     .form-side {
-      display: table-cell;
-      
       .sidebar-wrapper {
         button {
           margin-bottom: 10px;
         }
       }
     }
+  }
+}
+
+@media (min-width: 602px) {
+  .form-side {
+    display: table-cell;
+  }
+}
+
+@media (max-width: 601px) {
+  .form-side {
+    display: none;
   }
 }

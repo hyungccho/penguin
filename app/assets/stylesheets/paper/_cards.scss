@@ -553,6 +553,14 @@
   max-width: 380px;
 }
 
-.card-medium {
-  max-width: 610px;
+@media (min-width: 602px) {
+  .card-medium {
+    max-width: 610px;
+  }
+}
+
+@media (max-width: 601px) {
+  .card-medium {
+    max-width: 380px;
+  }
 }
