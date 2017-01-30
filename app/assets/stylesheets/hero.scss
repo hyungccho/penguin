@@ -1,0 +1,77 @@
+.logo-wrapper {
+  img {
+    max-width: 310px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.login-wrapper, .signup-wrapper {
+  position: relative;
+  padding: 35px 0;
+}
+
+.login-wrapper {
+  .form-wrapper {
+    padding-top: 30px;
+    margin: 0 auto;
+    
+    form {
+      padding: 15px 10px;
+
+      .button-group {
+        margin: 30px 0 0;
+        
+        button {
+          margin-bottom: 10px;
+        }
+        
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.signup-wrapper {
+  .form-wrapper {
+    padding-top: 30px;
+    margin: 0 auto;
+    
+    .form-main {
+      display: table-cell;
+
+      form {
+        padding: 15px 10px;
+        
+        .second-title {
+          margin-top: 15px;
+        }
+        
+        .button-group {
+          margin: 30px 0 0;
+
+          button {
+            margin-bottom: 10px;
+          }
+          
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+    
+    .form-side {
+      display: table-cell;
+      
+      .sidebar-wrapper {
+        button {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

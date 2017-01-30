@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+ 
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import 'fonts', 'font-sizes';
+
+// SCSS Specific
+@import 'font-awesome';
+
+// Paper Theme
+@import 'paper-dashboard', 'themify-icons';
+
+@import 'backgrounds', 'hero';
+
+html {
+  @include muli;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.row {
+  width: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.flex-align-top {
+  align-self: flex-start;
+}
+
+.flex-align-bottom {
+  align-self: flex-end;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #F3F2EE inset;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.error-box {
+  background-color: rgba(255, 192, 164, 0.4);
+  border: 1px solid #FFC0A4;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  
+  p:last-child {
+    margin: 0;
+  }
+}
+
+.no-float {
+  float: none !important;
+}
+
+.clearfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

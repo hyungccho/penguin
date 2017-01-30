@@ -1,0 +1,29 @@
+@import "compass";
+
+@include font-face("Themify", font-files("themify.woff", "themify.ttf", "themify.svg"), "themify.eot");
+
+@mixin themify {
+  font-family: Themify;
+}
+
+@mixin muli {
+  font-family: 'Muli', sans-serif;
+  font-weight: 300;
+}
+
+@mixin muli-bold {
+ font-family: 'Muli', sans-serif;
+ font-weight: 400;
+}
+
+.themify {  
+  @include themify;
+}
+
+.muli {
+  @include muli;
+}
+
+.muli-bold {
+  @include muli-bold;
+}
