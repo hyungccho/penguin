@@ -10,9 +10,6 @@ import LoginContainer from 'components/session/login_container'
 import SignupContainer from 'components/session/signup_container'
 import HomeContainer from 'components/app/home/home_container'
 
-// Plugins
-import isEmpty from 'lodash/isEmpty'
-
 class AppRouter extends React.Component {
   constructor (props) {
     super(props)
@@ -27,36 +24,27 @@ class AppRouter extends React.Component {
         onEnter: this._redirectIfLoggedIn
       },
       childRoutes: [
-        { path: 'login', component: LoginContainer, onEnter: this._redirectIfLoggedIn() },
-        { path: 'signup', component: SignupContainer, onEnter: this._redirectIfLoggedIn() },
+        { path: 'login', component: LoginContainer, onEnter: this._redirectIfLoggedIn },
+        { path: 'signup', component: SignupContainer, onEnter: this._redirectIfLoggedIn },
         { path: 'home', component: HomeContainer, onEnter: this._ensureLoggedIn }
       ]
     }
   }
-  
-  _isLoggedIn () {
-    const currentUser = this.props.currentUser
-    return (!isEmpty(currentUser))
-  }
 
   _ensureLoggedIn (nextState, replace) {
-    if (!this._isLoggedIn()) {
+    if (!this.props.store.getState().session.currentUser) {
       replace('/login')
     }
   }
 
   _redirectIfLoggedIn (nextState, replace) {
-    if (this._isLoggedIn()) {
+    if (this.props.store.getState().session.currentUser) {
       replace('/home')
     }
   }
 
   render () {
-    return(
-      <Router history={ browserHistory }>
-        { this.routes }
-      </Router>
-    )
+    return <Router history={ browserHistory } routes={ this.routes } />
   }
 }
 

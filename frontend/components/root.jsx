@@ -1,13 +1,13 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React from 'react'
+import { Provider } from 'react-redux'
 
 // Components
-import RouterContainer from 'components/router/router_container'
+import AppRouter from 'components/router'
 
 const Root = ({ store }) => (
   <Provider store={ store }>
-    <RouterContainer />
+    <AppRouter store={ store }/>
   </Provider>
 );
 
-export default Root;
+export default Root
