@@ -1,31 +1,28 @@
 // Actions
 import { SessionConstants } from 'actions/session/session_actions'
 
-// Plugins
-import merge from 'lodash/merge'
-
 const _nullUser = Object.freeze({
-  currentUser: {},
-  loginError: {},
-  signupError: {}
+  currentUser: null,
+  loginError: null,
+  signupError: null
 })
 
 const SessionReducer = (state = _nullUser, action) => {
   switch (action.type) {
     case SessionConstants.RECEIVE_CURRENT_USER:
-      const currentUser = action.user.response
-      return merge({}, state, { currentUser })
+      let currentUser = action.user
+      return { ...state, currentUser }
 
     case SessionConstants.LOGOUT:
-      return merge({}, _nullUser)
+      return { ...state, currentUser: null }
 
     case SessionConstants.LOGIN_FAILED:
       let loginError = action.response
-      return merge({}, state, { loginError })
+      return { ...state, loginError }
       
     case SessionConstants.SIGNUP_FAILED:
       let signupError = action.response
-      return merge({}, state, { signupError })
+      return { ...state, signupError }
 
     default:
       return state

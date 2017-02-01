@@ -7,7 +7,8 @@ import SignupForm from 'components/session/signup_form'
 import { signup } from 'actions/session/session_actions'
 
 const mapStateToProps = state => ({
-  signupError: state.session.signupError,
+  currentUser: state.session.currentUser,
+  signupError: state.session.signupError
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => {

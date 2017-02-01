@@ -7,6 +7,7 @@ import LoginForm from 'components/session/login_form'
 import { login } from 'actions/session/session_actions'
 
 const mapStateToProps = state => ({
+  currentUser: state.session.currentUser,
   loginError: state.session.loginError
 })
 

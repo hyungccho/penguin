@@ -4,10 +4,7 @@ export const SessionConstants = {
   SIGNUP: 'SIGNUP',
   RECEIVE_CURRENT_USER: 'RECEIVE_CURRENT_USER',
   LOGIN_FAILED: 'LOGIN_FAILED',
-  SIGNUP_FAILED: 'SIGNUP_FAILED',
-  INCREMENT_LIVE_ERROR_COUNT: 'INCREMENT_LIVE_ERROR_COUNT',
-  DECREMENT_LIVE_ERROR_COUNT: 'DECREMENT_LIVE_ERROR_COUNT',
-  RESET_LIVE_ERROR_COUNT: 'RESET_LIVE_ERROR_COUNT'
+  SIGNUP_FAILED: 'SIGNUP_FAILED'
 }
 
 export const login = (user) => ({
@@ -24,7 +21,7 @@ export const signup = (user) => ({
   user
 })
 
-export const receiveCurrentAccount = (user) => ({
+export const receiveCurrentUser = (user) => ({
   type: SessionConstants.RECEIVE_CURRENT_USER,
   user
 })

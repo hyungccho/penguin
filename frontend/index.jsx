@@ -13,7 +13,7 @@ import rootSaga from 'sagas/root_saga'
 import Root from 'components/root'
 
 // Plugins
-import isEmpty from 'lodash/isEmpty'
+import { isEmpty } from 'lodash'
 
 const sagaMiddleware = createSagaMiddleware()
 
