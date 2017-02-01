@@ -22,3 +22,9 @@ export const email = (text) => {
     return ErrorMessages.emailFormat
   }
 }
+
+export const minLength = (min) => {
+  return (text) => {
+    return text.length >= min ? null : ErrorMessages.minLength(min)
+  }
+}
