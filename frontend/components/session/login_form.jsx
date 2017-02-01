@@ -12,8 +12,7 @@ import { runValidators } from 'utils/form/validation'
 import logInValidations from 'validations/login_validations'
 
 // Plugins
-import isEmpty from 'lodash/isEmpty'
-import merge from 'lodash/merge'
+import { isEmpty, merge } from 'lodash'
 import classNames from 'classnames'
 
 class LoginForm extends React.Component {
@@ -32,6 +31,16 @@ class LoginForm extends React.Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.redirectToSignUp = this.redirectToSignUp.bind(this)
+	}
+	
+	componentDidUpdate () {
+		this.redirectIfLoggedIn()
+	}
+	
+	redirectIfLoggedIn () {
+		if (this.props.currentUser) {
+			this.props.router.push('/home')
+		}
 	}
 	
 	redirectToSignUp () {
@@ -67,7 +76,7 @@ class LoginForm extends React.Component {
 	}
 	
 	renderError () {
-		if (!isEmpty(this.props.loginError)) {
+		if (this.props.loginError) {
 			return (
 				<FormErrorBox header="Oops, that didn't work"
 										  message='Need help getting back in?'

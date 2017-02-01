@@ -5,8 +5,7 @@ import { withRouter } from 'react-router'
 import { Row, Column } from 'components/shared/bootstrap/index'
 
 // Plugins
-import isEmpty from 'lodash/isEmpty'
-import merge from 'lodash/merge'
+import { isEmpty, merge } from 'lodash'
 import classNames from 'classnames'
 
 // Validations
@@ -33,6 +32,16 @@ class SignupForm extends React.Component {
     this.redirectToSignIn = this.redirectToSignIn.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+  
+  componentDidUpdate () {
+		this.redirectIfLoggedIn()
+	}
+	
+	redirectIfLoggedIn () {
+		if (this.props.currentUser) {
+			this.props.router.push('/home')
+		}
+	}
   
   redirectToSignIn () {
     this.props.router.push({ pathname: '/login' })
@@ -71,7 +80,7 @@ class SignupForm extends React.Component {
 	}
   
   renderError () {
-    if (!isEmpty(this.props.signupError)) {
+    if (this.props.signupError) {
       if (this.props.signupError.error == 'invalid_resource') {
         return (
           <FormErrorBox header='Hmm...'
