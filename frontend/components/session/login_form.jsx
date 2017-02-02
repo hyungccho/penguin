@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
 	
 	redirectIfLoggedIn () {
 		if (this.props.currentUser) {
-			this.props.router.push('/home')
+			this.props.router.push('/dashboard')
 		}
 	}
 	
@@ -125,7 +125,7 @@ class LoginForm extends React.Component {
 
 	render () {
 		return (
-			<div className='wrapper light-gray-bg'>
+			<div className='wrapper'>
 				<div className='login-wrapper'>
 					<Row className='logo-wrapper'>
 						<Column className='col-xs-12 text-center'>

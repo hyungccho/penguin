@@ -8,7 +8,9 @@ import App from 'components/app'
 import Hero from 'components/hero/hero'
 import LoginContainer from 'components/session/login_container'
 import SignupContainer from 'components/session/signup_container'
-import HomeContainer from 'components/app/home/home_container'
+import Home from 'components/app/home'
+import Sidebar from 'components/app/layout/sidebar/sidebar'
+import BusinessesContainer from 'components/app/businesses/businesses_container'
 
 class AppRouter extends React.Component {
   constructor (props) {
@@ -26,7 +28,17 @@ class AppRouter extends React.Component {
       childRoutes: [
         { path: 'login', component: LoginContainer, onEnter: this._redirectIfLoggedIn },
         { path: 'signup', component: SignupContainer, onEnter: this._redirectIfLoggedIn },
-        { path: 'home', component: HomeContainer, onEnter: this._ensureLoggedIn }
+        {
+          path: 'dashboard',
+          component: Home,
+          onEnter: this._ensureLoggedIn,
+          childRoutes: [
+            {
+              path: '/businesses',
+              components: { main: BusinessesContainer, sidebar: Sidebar }
+            }
+          ]
+        }
       ]
     }
   }
@@ -39,7 +51,7 @@ class AppRouter extends React.Component {
 
   _redirectIfLoggedIn (nextState, replace) {
     if (this.props.store.getState().session.currentUser) {
-      replace('/home')
+      replace('/dashboard')
     }
   }
 

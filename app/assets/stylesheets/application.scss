@@ -24,8 +24,11 @@
 // Paper Theme
 @import 'paper-dashboard', 'themify-icons';
 
-// Desktop
-@import 'desktop/font-sizes', 'desktop/hero';
+// Custom
+@import 'font-sizes', 'hero';
+
+// Dashboard
+@import 'app/layout', 'app/dashboard';
 
 html {
   @include muli;
@@ -105,4 +108,12 @@ a:hover {
     content: "";
     clear: both;
   }
+}
+
+.wrapper {
+  background-color: #f4f3ef;
+}
+
+.custom-caret {
+  margin-left: 4px;
 }

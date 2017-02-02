@@ -39,7 +39,7 @@ class SignupForm extends React.Component {
 	
 	redirectIfLoggedIn () {
 		if (this.props.currentUser) {
-			this.props.router.push('/home')
+			this.props.router.push('/dashboard')
 		}
 	}
   
@@ -155,7 +155,7 @@ class SignupForm extends React.Component {
   
   render () {
     return (
-      <div className='wrapper light-gray-bg'>
+      <div className='wrapper'>
         <div className='signup-wrapper'>
           <Row className='logo-wrapper'>
             <Column className='col-xs-12 text-center'>

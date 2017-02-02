@@ -139,6 +139,10 @@
         font-size: $font-size-small;
         padding: $padding-dropdown-vertical $padding-dropdown-horizontal;
     }
+    
+    > li > a > i {
+      margin-right: 10px;
+    }
 
     > li > a {
        color: $font-color;
